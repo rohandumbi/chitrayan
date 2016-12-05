@@ -1,5 +1,5 @@
 requirejs.config({
-    baseUrl: 'scripts/lib',
+    baseUrl: 'scripts',
     paths: {
         // the left side is the module ID,
         // the right side is the path to
@@ -9,6 +9,24 @@ requirejs.config({
         // is using jQuery 1.9.0 located at
         // js/lib/jquery-1.9.0.js, relative to
         // the HTML page.
-        jquery: 'jquery-3.1.1'
+        jquery: 'lib/jquery-3.1.1',
+        camera: 'lib/camera',
+        bootstrap:  "lib/bootstrap",
+        "jquery-migrate": "lib/jquery-migrate-3.0.0"
+    },
+    shim: {
+        'camera': {
+            deps: ['jquery'],
+            exports: 'camera'
+        },
+        'bootstrap' : {
+            deps :['jquery'],
+            exports: 'bootstrap'
+        },
+        'jquery-migrate' : {
+            deps :['jquery'],
+            exports: 'jquery-migrate'
+        }
     }
+
 });
